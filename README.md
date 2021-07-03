@@ -49,4 +49,30 @@ hello
 - '.data' section 
     - we use `_str` is the label name  `db` which stands for **define bytes**, 0xa is for a newline char 
 
+## `mov_add` 
 
+```assembly 
+section .text 
+
+global _start 
+_start : 
+    mov rax, 60 
+    mov rbx, 5
+    mov rdi, 10
+    add rdi, rbx 
+    syscall  ; this should output 15
+```
+
+output : 
+```sh
+$ ./bin/mov_add 
+$ echo $?
+15
+```
+
+- syscall mode - exit (syscall code = 60)
+- we can use any register because we are not using anything like write() where reg. matters 
+- rbx = 5 
+- rdi (return code) = 10
+- rdi = rdi + rbx = 10 + 5 = 15 
+- syscall 
