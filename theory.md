@@ -1,4 +1,4 @@
-#x86
+# x86
 
 ## Registers 
 
@@ -44,10 +44,9 @@ To refer to a register there are 2 techniques
 - Addressing modes
     - How to address operands 
     - using hexadecimal (0x1337) 
-
-|                 Addressing modes                                                                                         |
-|:-----------------------------------------------:|:----------------------------------------------------------------------:|
+    
 |                   mov 0x604892                  |               Immediate Value is stored in the register                |
+|:-----------------------------------------------:|:----------------------------------------------------------------------:|
 |                  mov %eax, %ebx                 |                    Register - value in the register                    |
 |                 mov (%eax), $10                 |                      Indirect- Address in register                     |
 | mov 8(%ebp), $4  mov ECX, dword ptr [RBX + RDI] | Indirect with displacement - address =  base (%ebp) + displacement (8) |
