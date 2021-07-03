@@ -1,4 +1,4 @@
-#x86
+# x86
 
 ## Registers 
 
@@ -16,17 +16,16 @@ In **32 bit** we only have 4+4 = **8 Registers**
     - edi 
 
 In **64bit** : 
-
-    - rax 
-    - rbx 
-    - rcx 
-    - rdx 
-    - r8 - r15 (r8,r9,r10,....,r14,r15)
+- rax 
+- rbx 
+- rcx 
+- rdx 
+- r8 - r15 (r8,r9,r10,....,r14,r15)
     
-    - rsp 
-    - rbp 
-    - rsi 
-    - rdi 
+- rsp 
+- rbp 
+- rsi 
+- rdi 
 
 To refer to a register there are 2 techniques 
     - EAX - simple capital letters  
@@ -45,13 +44,12 @@ To refer to a register there are 2 techniques
     - How to address operands 
     - using hexadecimal (0x1337) 
 
-|                 Addressing modes                                                                                         |
-|:-----------------------------------------------:|:----------------------------------------------------------------------:|
+
 |                   mov 0x604892                  |               Immediate Value is stored in the register                |
+|:-----------------------------------------------:|:----------------------------------------------------------------------:|
 |                  mov %eax, %ebx                 |                    Register - value in the register                    |
 |                 mov (%eax), $10                 |                      Indirect- Address in register                     |
 | mov 8(%ebp), $4  mov ECX, dword ptr [RBX + RDI] | Indirect with displacement - address =  base (%ebp) + displacement (8) |
-
 
 
 
