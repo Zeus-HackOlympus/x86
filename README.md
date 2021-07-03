@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # x86
 
 ## Registers 
@@ -61,4 +62,56 @@ To refer to a register there are 2 techniques
 
 
 
+=======
+# x86 
+
+## Hello World 
+
+```assembly 
+section .text 
+    global _start 
+_start : 
+        mov rax, 1 
+        mov rdi, 1 
+        mov rsi, _str 
+        mov rdx, 14 
+        syscall 
+
+        mov rax, 60 
+        mov rdi, 0
+        syscall
+section .data
+    _str db "Hello, world",0xa
+```
+
+to run : 
+
+```sh
+$ nasm -f elf64 hello.asm -o hello.o 
+$ ld hello.o -o hello 
+$ ./hello 
+hello
+```
+**Principal of everything we are doing is same as ARM ASM**
+
+## Calling conventions 
+
+![Calling conventions](./calling_conv.png)
+
+
+- `.text` section 
+    - We are using syscall code for write (1) to print on screen. So we set rax to 1 to set syscall code 
+    - set arg0 i.e fd using **rdi register** - 1 (stdout)
+    - set arg1 i.e buf (what to write) using **rsi register**- `_str`
+    - set arg2 i.e `size_t count` (count of characters) - 14 using **rdx register** 
+    - then syscall using **syscall**
+
+    thats it for `write()` but what about exit 
+
+    - set `rax` register to 60 (syscall code for exit) 
+    - set `rdi` register to 0 (return value)  
+    - syscall 
+- '.data' section 
+    - we use `_str` is the label name  `db` which stands for **define bytes**, 0xa is for a newline char 
+>>>>>>> hello world
 
